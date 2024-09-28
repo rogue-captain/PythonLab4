@@ -23,6 +23,9 @@ Created on Sat Sep 28 16:18:03 2024
 #
 ##############################################################################
 
+import statistics
+
+import random
 
 ################################ VARIABLES ####################################
 
@@ -44,8 +47,44 @@ for row in range(1,11):
     result = userInput * row
     print(f"{row:>12} {result:>14}")
     
+    
+print() #spacer
+    
 ###############################################################################
 
 #B
-
+   
+def randomTenNumSelector():
     
+    randomNumList = []
+    
+    for n in range(10):
+        randomNum = random.randint(1, 100)
+        randomNumList.append(randomNum)
+    return randomNumList
+
+
+
+# Function to display the menu
+def display_menu():
+    print("######################################################")
+    print("#" * 58)
+    print("Choose from the MENU to perform a given task")
+    print("1- Calculate the mean value for the List")
+    print("2- Calculate the median value for the List")
+    print("3- Calculate the mode value for the List")
+    print("4- Calculate the Range value for the List")
+    print("5- Sort the values in ascending order in the List")
+    print("6- Calculate the standard deviation for the List")
+    print("-1 To EXIT")
+    print("######################################################")
+  
+###############################################################################
+    
+randomTenNumSelector()
+    
+display_menu()
+
+userSelect = int(input("What is your selection? "))
+
+print("You have selected: " ,userSelect)
