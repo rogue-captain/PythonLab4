@@ -14,13 +14,26 @@ Created on Sat Sep 28 16:18:03 2024
 # Due Date: 10/08/2024
 #
 # Program Description: 
+    
+#A
+#This program is made of 2 sub routines. Sub A will ask 
+#user for input and make a multiplaction table based on selected integer.
+
+#B
+#This sub program will ask user to select an integer from a menu, 1- 6. 
+#The system will randomly generate an array of 10 numbers for the program to
+#use in its calculations. 
+#Based off of the user selction, The system will perform the calculationa and
+#ask user for another input until sentinal is used to terminate program. 
 
 # 
 #
-# Inputs: 
+# Inputs: A: 1 integer variable
+#         B: input loop for numbers 1- 6 until sentinal is used.
 #
-# Outputs:
-#
+# Outputs: A: a multiplication table based on the user input.
+#          B: 1 of 6 possible calculations will be produced based off of a list
+#             of 10 random numbers.
 ##############################################################################
 
 import statistics
@@ -99,9 +112,12 @@ display_menu() #user sees menu
 
 
 
-userSelect = 0
+userSelect = 0 #initialize userSelect
 
+#while loop to controlled with -1 sentinal
 while userSelect != -1:
+    
+    #try / exept lines to act as check for correct input type
     try:
         userSelect = int(input("What is your selection? "))
         
@@ -138,8 +154,8 @@ while userSelect != -1:
         print(f"List in Ascending Order: {sorted_list}")
             
     elif userSelect == 6:
-        stdev_value = statistics.stdev(randomNumList)
-        print(f"Standard Deviation: {stdev_value}")
+        standardDeviation_value = statistics.stdev(randomNumList)
+        print(f"Standard Deviation: {standardDeviation_value}")
             
     elif userSelect == -1:
         print("Exiting the program. Good-Bye Nerd!")
